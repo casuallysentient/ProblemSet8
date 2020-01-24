@@ -32,7 +32,19 @@ public class Exercises {
 	}
 
 	public int difference(int[] numbers) {
-		// write your code here
+		if (numbers != null && numbers.length >= 1) {
+			int maxValue = numbers[0];
+			int minValue = numbers[0];
+			for(int i : numbers) {
+				if (i > maxValue) {
+					maxValue = i;
+				} else if (i < minValue) {
+					minValue = i;
+				}
+			}
+			int differenceOfValues = maxValue - minValue;
+			return differenceOfValues;
+		}
 
 		return -1;		// default return value to ensure compilation
 	}
