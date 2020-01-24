@@ -246,3 +246,4 @@ public class Exercises {
 
 //absolutely furiously coding rn mr wilson
 //love apcompsci woooooo
+//two minutes
