@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Exercises {
 
 	public boolean commonEnd(int[] a, int[] b) {
@@ -50,7 +52,29 @@ public class Exercises {
 	}
 
 	public double biggest(double[] numbers) {
-		// write your code here
+		if (numbers != null && numbers.length >= 3 && numbers.length % 2 == 1) {
+			boolean allPositive = true;
+			for (double i : numbers) {
+				if (i < 0) {
+					allPositive = false;
+				}
+			}
+			if (allPositive == true) {
+				double firstValue = numbers[0];
+				double lastValue = numbers[numbers.length - 1];
+				int middleIndex = (int) Math.floor(numbers.length / 2);
+				double middleValue = numbers[middleIndex];
+				double biggestValue = firstValue;
+				if (firstValue >= middleValue && firstValue >= lastValue) {
+					biggestValue = firstValue;
+				} else if (middleValue >= firstValue && middleValue >= lastValue) {
+					biggestValue = middleValue;
+				} else if (lastValue >= firstValue && lastValue >= middleValue) {
+					biggestValue = lastValue;
+				}
+				return biggestValue;
+			}
+		}
 
 		return -1;		// default return value to ensure compilation
 	}
